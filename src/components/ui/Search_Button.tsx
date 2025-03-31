@@ -22,8 +22,13 @@ const Search_Button: React.FC = () => {
 
     fetchFlights();
 
+    setTimeout(() => {
+        console.log("Termino el tiempo antes de solicitar la lista de vuelos encontrados");
+        navigate("/flightsDisp");
+      }, 5000);
+
     //agregar condicion que revise si se logro hacer la bsuqeuda, y si si que cambie de pagina.
-    navigate("/flightsDisp");
+    //navigate("/flightsDisp");
   };
 
   return (

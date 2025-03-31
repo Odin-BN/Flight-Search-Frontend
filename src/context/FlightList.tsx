@@ -26,6 +26,7 @@ export const FlightListProvider = ({children}:FlightProviderProps) => {
     const [flights, setFlights] = useState<FlightModel[]>([]);
     const [page, setPage] = useState<string>("1");
 
+    //agregar el usecontext para que se llame cada que el valor de la pagina cambie
     const fetchFlights = async () => {
         let searchUrl = `http://localhost:9090/amadeus/Flights?page=${page}`;
 
