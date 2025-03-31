@@ -5,7 +5,7 @@ import FlightSearchAmadeus from '@/context/FlightSearchAmadeus';
 
 const Search_Button: React.FC = () => {
   const {handleSearch} = useContext(FlightSearchAmadeus);
-  const [query, setQuery] = useState("");
+  //const [query, setQuery] = useState("");
   const navigate = useNavigate();
   
   const Search = () => {
