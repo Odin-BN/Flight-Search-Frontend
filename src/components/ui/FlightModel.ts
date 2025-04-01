@@ -11,17 +11,17 @@ export interface FlightSegments{
     airlineName: string,
     operatingAirlineCode: string;
     operatingAirlineName: string;
-    Duration: string;
-    FlightNumber: string;
-    AircraftCode: string;
-    AircraftName: string;
+    duration: string;
+    flightNumber: string;
+    aircraftCode: string;
+    aircraftName: string;
 }
 
 export interface FlightPrices{
-    CabinType: string;
-    ClassType: string;
-    CheckedBagsWeight: string;
-    CheckedBagsUnit: string;
+    cabinType: string;
+    classType: string;
+    checkedBagsWeight: string;
+    checkedBagsUnit: string;
 }
 export interface FlightItineraries{
     itinerate_id: string;
