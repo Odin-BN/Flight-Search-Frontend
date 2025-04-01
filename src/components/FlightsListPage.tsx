@@ -10,7 +10,11 @@ const FlightsListPage: React.FC = () => {
     return (
     <>
         <Button2 />
-        <DirectFlightCard flight={flights[0]}/>
+
+        <DirectFlightCard flight={flights[0] || null}/>
+        <DirectFlightCard flight={flights[1] || null}/>
+        <DirectFlightCard flight={flights[2] || null}/>
+        <DirectFlightCard flight={flights[3] || null}/>
     </>
     );
 

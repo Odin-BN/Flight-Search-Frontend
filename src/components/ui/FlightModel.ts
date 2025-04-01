@@ -9,8 +9,8 @@ export interface FlightSegments{
     arrivalCity: string;
     airlineCode: string;
     airlineName: string,
-    OperatingAirlineCode: string;
-    OperatingAirlineName: string;
+    operatingAirlineCode: string;
+    operatingAirlineName: string;
     Duration: string;
     FlightNumber: string;
     AircraftCode: string;
