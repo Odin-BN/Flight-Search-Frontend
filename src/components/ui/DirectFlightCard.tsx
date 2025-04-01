@@ -23,7 +23,7 @@ const DirectFlightCard: React.FC<Props> = ({flight}) => {
     
       <div className='flex flex-col items-start w-1/4'>
 
-        <div className='flex gap-x-1 text-sm text-black'>
+        <div className='flex gap-x-1 text-sm text-black w-full'>
             <p>{flight?.infoPerItinerary?.[0]?.flightSegments?.[0]?.departureDate || "fecha de salida"}</p>
             <p>{flight?.infoPerItinerary?.[0]?.flightSegments?.[0]?.departureTime || "hora de salida"}</p>
             <p>-</p>

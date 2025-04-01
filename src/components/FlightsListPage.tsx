@@ -2,6 +2,7 @@ import React, {useContext} from 'react';
 import Button2 from './ui/Button2';
 import DirectFlightCard from './ui/DirectFlightCard';
 import FlightList from '@/context/FlightList';
+import DividerForPage from './ui/DividerForPage';
 
 
 const FlightsListPage: React.FC = () => {
@@ -12,8 +13,11 @@ const FlightsListPage: React.FC = () => {
         <Button2 />
 
         <DirectFlightCard flight={flights[0] || null}/>
-        <DirectFlightCard flight={flights[1] || null}/>
+        {flights[1] && <DividerForPage/>}
+        {flights[1] && <DirectFlightCard flight={flights[1] || null}/>}
+        <DividerForPage/>
         <DirectFlightCard flight={flights[2] || null}/>
+        <DividerForPage/>
         <DirectFlightCard flight={flights[3] || null}/>
     </>
     );
