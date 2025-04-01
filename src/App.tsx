@@ -5,6 +5,7 @@ import SearchModal from "./components/SearchModalPage"
 import { FlightProvider } from "./context/FlightSearchAmadeus"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { FlightListProvider } from "./context/FlightList";
+import FlightDetailsPage from "./components/FlightDetailsPage";
 
 
 
@@ -14,7 +15,8 @@ function App() {
     <Router>
       <Routes>
       <Route path="/" element={<FlightListProvider><FlightProvider><SearchModal /></FlightProvider></FlightListProvider>} />
-      <Route path="/flightsDisp" element={<FlightListProvider><FlightsListPage /></FlightListProvider>} />
+      <Route path="/flightsDisp" element={<FlightListProvider><FlightsListPage /></FlightListProvider>}/>
+      <Route path="/flightsDisp/details" element={<FlightListProvider><FlightDetailsPage/></FlightListProvider>}/>
     </Routes>
     </Router>
   )

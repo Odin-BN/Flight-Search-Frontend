@@ -5,10 +5,11 @@ import { FlightModel } from './FlightModel';
 //Detalles de los vuelos, este componente para ha estar dentor de la pagina de detalles
 
 interface Props {
-    flight: FlightModel;
+    flight: FlightModel | null;
+    id: string;
 }
 
-const FlightDetails: React.FC<Props> = ({flight}) => {
+const FlightDetails: React.FC<Props> = ({flight, id}) => {
 
 
     return (
@@ -16,6 +17,8 @@ const FlightDetails: React.FC<Props> = ({flight}) => {
     <div className='flex justify-between items-center border-2 border-blue-500 rounded-lg p-4 shadow-md transition cursor-pointer bg-white card'>
     
       <div className='flex flex-col items-start w-1/4'>
+
+      <p>Segment {id || "X"}</p>
 
         <div className='flex gap-x-1 text-sm text-black w-full'>
             <p>{flight?.infoPerItinerary?.[0]?.flightSegments?.[0]?.departureDate || "fecha de salida"}</p>

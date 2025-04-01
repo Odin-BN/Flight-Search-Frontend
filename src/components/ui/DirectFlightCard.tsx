@@ -41,8 +41,8 @@ const DirectFlightCard: React.FC<Props> = ({flight}) => {
         </h3>
 
         <div className='flex gap-x-1 w-full text-sm text-black'>
-           <p>{flight?.infoPerItinerary?.[0]?.flightSegments?.[1]?.operatingAirlineName || "Nombre de aerolinea opetartiva"}</p>
-           <p>({flight?.infoPerItinerary?.[0]?.flightSegments?.[1]?.operatingAirlineCode || "Codigo Aerolinea opeativa"})</p>
+           <p>{flight?.infoPerItinerary?.[0]?.flightSegments?.[1]?.operatingAirlineName || flight?.infoPerItinerary?.[0]?.flightSegments?.[0]?.operatingAirlineName || "Nombre de aerolinea opetartiva"}</p>
+           <p>({flight?.infoPerItinerary?.[0]?.flightSegments?.[1]?.operatingAirlineCode || flight?.infoPerItinerary?.[0]?.flightSegments?.[0]?.operatingAirlineCode || "Codigo Aerolinea opeativa"})</p>
         </div>
        
       </div>
