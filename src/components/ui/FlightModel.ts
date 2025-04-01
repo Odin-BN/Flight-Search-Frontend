@@ -1,3 +1,15 @@
+export interface FlightAmenities{
+    description: string;
+    isChargeable: boolean;
+}
+
+export interface FlightPrices{
+    cabinType: string;
+    classType: string;
+    checkedBagsWeight: string;
+    checkedBagsUnit: string;
+}
+
 export interface FlightSegments{
     departureDate: string;
     departureTime: string;
@@ -15,14 +27,11 @@ export interface FlightSegments{
     flightNumber: string;
     aircraftCode: string;
     aircraftName: string;
+    flightAmenities: FlightAmenities[];
+    id: number;
+    flightPrices: FlightPrices[];
 }
 
-export interface FlightPrices{
-    cabinType: string;
-    classType: string;
-    checkedBagsWeight: string;
-    checkedBagsUnit: string;
-}
 export interface FlightItineraries{
     itinerate_id: string;
     totalDuration: string;
@@ -30,18 +39,11 @@ export interface FlightItineraries{
     flightSegments: FlightSegments[];
 }
 
-export interface FlightAmenities{
-    description: string;
-    isChargeable: boolean;
-}
-
 export interface FlightModel{
     flight_id: string,
-    flightPrices: FlightPrices[];
     infoPerItinerary: FlightItineraries[];
     totalPrice: number;
     pricePerTraveler: number;
     basePrice: number;
     feesPrice: number;
-    flightAmenities: FlightAmenities[];
 }

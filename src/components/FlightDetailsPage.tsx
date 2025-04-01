@@ -11,10 +11,15 @@ const FlightDetailsPage: React.FC = () => {
     const {flightDetails} = useContext(FlightList);
 
     //hacer un cliclo que envie el segmento del vuelo que se va analizar
+    /**{flightDetails?.infoPerItinerary[1].flightSegments[0] && <FlightDetails flight={flightDetails.infoPerItinerary[1].flightSegments[0]}/>}
+        {flightDetails?.infoPerItinerary[1].flightSegments[1] && <FlightDetails flight={flightDetails.infoPerItinerary[1].flightSegments[1]}/>} */
 
     return (
     <>
-        <FlightDetails flight={flightDetails} id={"1"}/> 
+        {flightDetails?.infoPerItinerary?.[0]?.flightSegments?.[0] && <FlightDetails flight={flightDetails.infoPerItinerary[0].flightSegments[0] || null}/>}
+        {flightDetails?.infoPerItinerary?.[0]?.flightSegments?.[1] && <FlightDetails flight={flightDetails.infoPerItinerary[0].flightSegments[1] || null}/>}
+        {flightDetails?.infoPerItinerary?.[1]?.flightSegments?.[0] && <FlightDetails flight={flightDetails.infoPerItinerary[1].flightSegments[0] || null}/>}
+        {flightDetails?.infoPerItinerary?.[1]?.flightSegments?.[1] && <FlightDetails flight={flightDetails.infoPerItinerary[1].flightSegments[1] || null}/>}
     </>
     );
 
