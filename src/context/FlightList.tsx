@@ -7,8 +7,12 @@ type FlightListType = {
     page: string;
     setPage: (text: string) => void;
     fetchFlights: () => void;
+    flightDetails: FlightModel | null; //vuelo del que se van a mostrar los detalles
+    setFlightDetails: (fligthDetails: FlightModel | null) => void;
     //agregar la pagina actual
 };
+
+/*const FlightList = createContext<FlightListType | undefined>(undefined);*/
 
 const FlightList = createContext<FlightListType>({
     flights: [],
@@ -16,6 +20,9 @@ const FlightList = createContext<FlightListType>({
     page: "1",
     setPage: () => {},
     fetchFlights: () => {},
+    flightDetails: null,
+    setFlightDetails: () => {},
+
 });
 
 type FlightProviderProps = {
@@ -25,6 +32,7 @@ type FlightProviderProps = {
 export const FlightListProvider = ({children}:FlightProviderProps) => {
     const [flights, setFlights] = useState<FlightModel[]>([]);
     const [page, setPage] = useState<string>("1");
+    const [flightDetails, setFlightDetails] = useState<FlightModel | null>(null);
 
     //agregar el usecontext para que se llame cada que el valor de la pagina cambie
     const fetchFlights = async () => {
@@ -53,7 +61,7 @@ export const FlightListProvider = ({children}:FlightProviderProps) => {
     };
 
     return (
-        <FlightList.Provider value= {{flights, setFlights, page, setPage, fetchFlights}}>
+        <FlightList.Provider value= {{flights, setFlights, page, setPage, fetchFlights, flightDetails, setFlightDetails}}>
             {children}
         </FlightList.Provider>
     )

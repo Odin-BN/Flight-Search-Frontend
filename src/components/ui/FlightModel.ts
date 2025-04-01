@@ -30,6 +30,11 @@ export interface FlightItineraries{
     flightSegments: FlightSegments[];
 }
 
+export interface FlightAmenities{
+    description: string;
+    isChargeable: boolean;
+}
+
 export interface FlightModel{
     flight_id: string,
     flightPrices: FlightPrices[];
@@ -38,4 +43,5 @@ export interface FlightModel{
     pricePerTraveler: number;
     basePrice: number;
     feesPrice: number;
+    flightAmenities: FlightAmenities[];
 }

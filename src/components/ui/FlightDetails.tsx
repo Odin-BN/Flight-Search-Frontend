@@ -1,28 +1,19 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import { FlightModel } from './FlightModel';
-import { useNavigate } from 'react-router-dom';
-import FlightList from '@/context/FlightList';
 
 //import { Card } from 'antd';
-//Vuelo sencillo, osea sin fecha de vuelta, solo ida
+//Detalles de los vuelos, este componente para ha estar dentor de la pagina de detalles
 
 interface Props {
     flight: FlightModel;
 }
 
-const DirectFlightCard: React.FC<Props> = ({flight}) => {
-    const navigate = useNavigate();
-    const {setFlightDetails} = useContext(FlightList);
-    
+const FlightDetails: React.FC<Props> = ({flight}) => {
 
-    const handleClick = () => {
-        setFlightDetails(flight);
-        navigate(`/flightsDisp/details`);
-    }
 
     return (
 
-    <div className='flex justify-between items-center border-2 border-blue-500 rounded-lg p-4 shadow-md transition cursor-pointer bg-white card' onClick={handleClick}>
+    <div className='flex justify-between items-center border-2 border-blue-500 rounded-lg p-4 shadow-md transition cursor-pointer bg-white card'>
     
       <div className='flex flex-col items-start w-1/4'>
 
@@ -79,4 +70,4 @@ const DirectFlightCard: React.FC<Props> = ({flight}) => {
     );
 };
 
-export default DirectFlightCard;
+export default FlightDetails;
