@@ -9,13 +9,21 @@ const SortingButtons: React.FC = () => {
 
   const sortPrice = () => {
     flightsSort("price");
-    fetchFlights();
+
+    setTimeout(() => {
+      fetchFlights();
+      console.log("Termino el tiempo antes de solicitar la lista sorteada por precios");
+    }, 5000);
 
   };
 
   const sortDuration = () => {
     flightsSort("duration");
-    fetchFlights();
+
+    setTimeout(() => {
+      fetchFlights();
+      console.log("Termino el tiempo antes de solicitar la lista sorteada por duracion");
+    }, 5000);
   }
 
   return (

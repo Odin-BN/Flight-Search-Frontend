@@ -12,7 +12,11 @@ const Pagination_List: React.FC = () => {
     console.log(page);
     setCurrent(page);
     setPage_Sel(String(page));
-    fetchFlights();
+
+    setTimeout(() => {
+        fetchFlights();
+        console.log("Termino el tiempo antes de solicitar otra pagina de datos");
+      }, 5000);
   };
 
   return <Pagination current={current} onChange={onChange} total={50} showSizeChanger={false} align={'center'}/>;
