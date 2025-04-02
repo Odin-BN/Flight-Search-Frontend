@@ -1,4 +1,4 @@
-import React, {useContext, useEffect} from 'react';
+import React, {useContext} from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button, Flex } from 'antd';
 import FlightSearchAmadeus from '@/context/FlightSearchAmadeus';
@@ -20,9 +20,8 @@ const Search_Button: React.FC = () => {
         fetchFlights();
       }, 5000);*/
 
-    fetchFlights();
-
     setTimeout(() => {
+        fetchFlights();
         console.log("Termino el tiempo antes de solicitar la lista de vuelos encontrados");
         navigate("/flightsDisp");
       }, 5000);

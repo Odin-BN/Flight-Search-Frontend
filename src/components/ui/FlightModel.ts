@@ -16,8 +16,10 @@ export interface FlightSegments{
     arrivalDate: string;
     arrivalTime: string;
     departureAirport: string;
+    departureAirportName: String;
     departureCity: string;
     arrivalAirport: string;
+    arrivalAirportName: String;
     arrivalCity: string;
     airlineCode: string;
     airlineName: string,

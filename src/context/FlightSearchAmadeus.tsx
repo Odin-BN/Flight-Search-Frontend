@@ -58,7 +58,7 @@ export const FlightProvider = ({ children }: FlightProviderProps) => {
             originLocationCode: originLocationCode,
             destinationLocationCode: destinationLocationCode,
             departureDate: departureDate,
-            returnDate: returnDate || null,
+            returnDate: returnDate,
             adults: adults,
             nonStop: nonStop,
             currencyCode: currencyCode,
