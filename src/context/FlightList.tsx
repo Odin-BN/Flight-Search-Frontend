@@ -4,8 +4,8 @@ import { FlightModel } from '@/components/ui/FlightModel';
 type FlightListType = {
     flights: FlightModel[];
     setFlights: React.Dispatch<React.SetStateAction<FlightModel[]>>;
-    page: string;
-    setPage: (text: string) => void;
+    page_Sel: string;
+    setPage_Sel: (text: string) => void;
     fetchFlights: () => void;
     flightDetails: FlightModel | null; //vuelo del que se van a mostrar los detalles
     setFlightDetails: (fligthDetails: FlightModel | null) => void;
@@ -17,8 +17,8 @@ type FlightListType = {
 const FlightList = createContext<FlightListType>({
     flights: [],
     setFlights: () => {},
-    page: "1",
-    setPage: () => {},
+    page_Sel: "1",
+    setPage_Sel: () => {},
     fetchFlights: () => {},
     flightDetails: null,
     setFlightDetails: () => {},
@@ -31,12 +31,12 @@ type FlightProviderProps = {
 
 export const FlightListProvider = ({children}:FlightProviderProps) => {
     const [flights, setFlights] = useState<FlightModel[]>([]);
-    const [page, setPage] = useState<string>("1");
+    const [page_Sel, setPage_Sel] = useState<string>("1");
     const [flightDetails, setFlightDetails] = useState<FlightModel | null>(null);
 
     //agregar el usecontext para que se llame cada que el valor de la pagina cambie
     const fetchFlights = async () => {
-        let searchUrl = `http://localhost:9090/amadeus/Flights?page=${page}`;
+        let searchUrl = `http://localhost:9090/amadeus/Flights?page=${page_Sel}`;
 
         try {
             const response = await fetch(searchUrl, {
@@ -61,7 +61,7 @@ export const FlightListProvider = ({children}:FlightProviderProps) => {
     };
 
     return (
-        <FlightList.Provider value= {{flights, setFlights, page, setPage, fetchFlights, flightDetails, setFlightDetails}}>
+        <FlightList.Provider value= {{flights, setFlights, page_Sel, setPage_Sel, fetchFlights, flightDetails, setFlightDetails}}>
             {children}
         </FlightList.Provider>
     )

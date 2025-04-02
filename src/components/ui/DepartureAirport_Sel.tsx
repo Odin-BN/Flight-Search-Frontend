@@ -1,41 +1,3 @@
-/*import React, {useContext, useEffect} from 'react';
-import { Select, Space } from 'antd';
-import FlightSearchAmadeus from '@/context/FlightSearchAmadeus';
-
-
-
-
-const DepartureAirport_Sel: React.FC = () => {
-  const { originLocationCode, setOriginLocationCode } = useContext(FlightSearchAmadeus);
-
-  const handleChange = (value: string) => {
-    setOriginLocationCode(value);
-
-  };
-
-  useEffect(() => {
-    console.log(originLocationCode);
-  }, [originLocationCode]);
-
-  return (
-  <Space wrap>
-    <Select
-      defaultValue="lucy"
-      style={{ width: 120 }}
-      onChange={handleChange}
-      options={[
-        { value: 'SYD', label: 'SYD' },
-        { value: 'lucy', label: 'Lucy' },
-        { value: 'Yiminghe', label: 'yiminghe' },
-        { value: 'disabled', label: 'Disabled', disabled: true },
-      ]}
-    />
-  </Space>
-  )
-};
-
-export default DepartureAirport_Sel;*/
-
 import React, {useContext, useEffect, useState} from 'react';
 import { AutoComplete } from 'antd';
 import type { AutoCompleteProps } from 'antd';
@@ -60,7 +22,7 @@ const DepartureAirport_Sel: React.FC = () => {
 
   const fetchSuggestions = async (searchTerm: string) => {
     console.log(searchTerm);
-    
+
     if (!searchTerm) {
       setSuggestions([]);
       return;
@@ -80,28 +42,15 @@ const DepartureAirport_Sel: React.FC = () => {
 
 
     } catch (error) {
-      console.error("Error obteniendo las sugerencias de los vuelos: ", error);
+      console.error("Error obteniendo las sugerencias de los aeropuertos: ", error);
     }
   };
-
-  
-  /*const handleSearch = (value: string) => {
-    setOptions(() => {
-      if (!value || value.includes('@')) {
-        return [];
-      }
-      return ['codigoAIR', 'codigoAIR', 'codigoAIR'].map((code) => ({
-        label: `${value} (${code})`,
-        value: `${value} (${code})`,
-      }));
-    });
-  };*/
 
   return (
     <AutoComplete
       style={{ width: 200 }}
       onSearch={fetchSuggestions}
-      placeholder="input here"
+      placeholder="Departure Airport"
       options={options}
       onSelect={handleChange}
     />

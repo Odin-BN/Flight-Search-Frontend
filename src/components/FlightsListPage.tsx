@@ -3,6 +3,7 @@ import Button2 from './ui/Button2';
 import DirectFlightCard from './ui/DirectFlightCard';
 import FlightList from '@/context/FlightList';
 import DividerForPage from './ui/DividerForPage';
+import Pagination_List from './ui/PaginationList';
 
 
 const FlightsListPage: React.FC = () => {
@@ -19,6 +20,7 @@ const FlightsListPage: React.FC = () => {
         <DirectFlightCard flight={flights[2] || null}/>
         <DividerForPage/>
         <DirectFlightCard flight={flights[3] || null}/>
+        <Pagination_List />
     </>
     );
 
