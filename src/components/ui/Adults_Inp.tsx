@@ -15,7 +15,7 @@ const Adults_Inp: React.FC = () => {
           }, [adults]);
 
   return (
-    <InputNumber min={1} max={9} defaultValue={3} onChange={onChange} />
+    <InputNumber min={1} max={9} defaultValue={1} onChange={onChange} />
   );
 };
 

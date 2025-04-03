@@ -16,14 +16,13 @@ const Currency_Sel: React.FC = () => {
   return (
   <Space wrap>
     <Select
-      defaultValue="lucy"
+      defaultValue="EUR"
       style={{ width: 120 }}
       onChange={handleChange}
       options={[
         { value: 'EUR', label: 'EUR' },
-        { value: 'lucy', label: 'Lucy' },
-        { value: 'Yiminghe', label: 'yiminghe' },
-        { value: 'disabled', label: 'Disabled', disabled: true },
+        { value: 'MXN', label: 'MXN' },
+        { value: 'USD', label: 'USD' },
       ]}
     />
   </Space>

@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import type { PaginationProps } from 'antd';
 import { Pagination } from 'antd';
 import FlightList from '@/context/FlightList';
@@ -6,11 +6,11 @@ import FlightList from '@/context/FlightList';
 const Pagination_List: React.FC = () => {
     const {page_Sel, setPage_Sel} = useContext(FlightList);
     const {fetchFlights} = useContext(FlightList);
-    const [current, setCurrent] = useState(1);
+    //const [current, setCurrent] = useState(1);
 
   const onChange: PaginationProps['onChange'] = (page) => {
     console.log(page);
-    setCurrent(page);
+    //setCurrent(page);
     setPage_Sel(String(page));
     //fetchFlights();
 
