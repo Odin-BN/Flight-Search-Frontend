@@ -16,7 +16,7 @@ function App() {
     <Router>
       <Routes>
       <Route path="/" element={<FlightListProvider><FlightProvider><SearchModal /></FlightProvider></FlightListProvider>} />
-      <Route path="/flightsDisp" element={<FlightsSorting><FlightListProvider><FlightsListPage /></FlightListProvider></FlightsSorting>}/>
+      <Route path="/flightsDisp" element={<FlightListProvider><FlightsSorting><FlightsListPage /></FlightsSorting></FlightListProvider>}/>
       <Route path="/flightsDisp/details" element={<FlightListProvider><FlightDetailsPage/></FlightListProvider>}/>
     </Routes>
     </Router>
