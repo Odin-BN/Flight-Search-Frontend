@@ -9,7 +9,7 @@ interface Props {
 const AmenitiesPopOver: React.FC<Props> = ({flight}) => {
 
     const content = (
-        <div>
+        <div className='text-black'>
             {Array.isArray(flight) ? (
             flight.map((flightAm, index) => (
                 <div key={index}>

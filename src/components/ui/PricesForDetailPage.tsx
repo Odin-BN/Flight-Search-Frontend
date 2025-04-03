@@ -14,7 +14,7 @@ const PricesForDetailPage: React.FC<Props> = ({flight}) => {
 
     return (
         
-    <div className='flex justify-between items-center border-2 border-blue-500 rounded-lg p-4 shadow-md transition bg-white card'>
+    <div className='flex justify-between items-center border-2 border-blue-500 rounded-lg p-4 shadow-md transition bg-white card text-black'>
         
     
       <div className='flex flex-col items-start w-3/8'>
