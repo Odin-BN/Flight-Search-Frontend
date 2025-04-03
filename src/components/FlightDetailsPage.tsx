@@ -1,6 +1,7 @@
 import React, {useContext} from 'react';
 import FlightList from '@/context/FlightList';
 import FlightDetails from './ui/FlightDetails';
+import PricesForDetailPage from './ui/PricesForDetailPage';
 
 //Aqui va un ciclo con el componente para mostrar los detalles de los vuelos
 
@@ -16,6 +17,8 @@ const FlightDetailsPage: React.FC = () => {
 
     return (
     <>
+        {flightDetails?.infoPerItinerary?.[0]?.flightSegments?.[0] && <PricesForDetailPage flight={flightDetails || null}/>}
+
         {flightDetails?.infoPerItinerary?.[0]?.flightSegments?.[0] && <FlightDetails flight={flightDetails.infoPerItinerary[0].flightSegments[0] || null}/>}
         {flightDetails?.infoPerItinerary?.[0]?.flightSegments?.[1] && <FlightDetails flight={flightDetails.infoPerItinerary[0].flightSegments[1] || null}/>}
         {flightDetails?.infoPerItinerary?.[1]?.flightSegments?.[0] && <FlightDetails flight={flightDetails.infoPerItinerary[1].flightSegments[0] || null}/>}

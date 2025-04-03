@@ -25,8 +25,8 @@ const FlightSearchAmadeus = createContext<FlightSearchAmadeusType>({
     departureDate: "Fecha actual",
     returnDate: "",
     adults: "1",
-    nonStop: false,
-    currencyCode: "EUR",
+    nonStop: true,
+    currencyCode: "",
     setOriginLocationCode: () => {},
     setDestinationLocationCode: () => {},
     setDepartureDate: () => {},
@@ -47,7 +47,7 @@ export const FlightProvider = ({ children }: FlightProviderProps) => {
     const [departureDate, setDepartureDate] = useState<string>("Fecha actual");
     const [returnDate, setReturnDate] = useState<string>("");
     const [adults, setAdults] = useState<string>("1");
-    const [nonStop, setNonStop] = useState<boolean>(false);
+    const [nonStop, setNonStop] = useState<boolean>(true);
     const [currencyCode, setCurrencyCode] = useState<string>("EUR");
 
     const handleSearch = async () => {

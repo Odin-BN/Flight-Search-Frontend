@@ -25,7 +25,7 @@ const Pagination_List: React.FC = () => {
     fetchFlights();
   }, [page_Sel]);
 
-  return <Pagination defaultCurrent={1} onChange={onChange} total={50} showSizeChanger={false} align={'center'}/>;
+  return <Pagination defaultCurrent={1} onChange={onChange} total={50} showSizeChanger={false} align={'center'}/> ;
 };
 
 export default Pagination_List;

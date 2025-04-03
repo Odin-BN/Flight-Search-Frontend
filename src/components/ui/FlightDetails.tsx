@@ -1,5 +1,6 @@
 import React from 'react';
 import { FlightSegments } from './FlightModel';
+import AmenitiesPopOver from './AmenitiesPopOver';
 
 //import { Card } from 'antd';
 //Detalles de los vuelos, este componente para ha estar dentor de la pagina de detalles
@@ -20,24 +21,42 @@ const FlightDetails: React.FC<Props> = ({flight}) => {
         <p>Segment {flight?.id || "X"}</p>
 
         <div className='flex gap-x-1 text-sm text-black w-full'>
-            <p>{flight?.departureDate || "fecha de salida"}</p>
-            <p>{flight?.departureTime || "hora de salida"}</p>
+            <p>{flight?.departureDate}</p>
+            <p>{flight?.departureTime}</p>
             <p>-</p>
-            <p>{flight?.arrivalDate || flight?.arrivalDate || "fecha de llegada"}</p>
-            <p>{flight?.arrivalTime || flight?.arrivalTime || "hora de llegada"}</p>
+            <p>{flight?.arrivalDate}</p>
+            <p>{flight?.arrivalTime}</p>
+        </div>
+
+        <div className='flex gap-x-1 text-black w-full text-lg'>
+            <p>{flight?.departureCity}</p>
+            <p>-</p>
+            <p>{flight?.arrivalCity}</p>
         </div>
 
 
-        <h3 className='text-2xl font-bold'>
-            {flight?.departureAirport || "aeropuerto de salida"} ---------- 
-            {flight?.arrivalAirport || flight?.arrivalAirport ||"aeropuerto llegada"}
+        <h3 className='flex gap-x-1 text-lg font-bold'>
+            <p>{flight?.departureAirportName}</p>
+            <p>({flight?.departureAirport})</p> 
+            <p>-</p>
+            <p>{flight?.arrivalAirportName}</p>
+            <p>({flight?.arrivalAirport})</p>
         </h3>
 
         <div className='flex gap-x-1 w-full text-sm text-black'>
-           <p>{flight?.operatingAirlineName || "Nombre de aerolinea opetartiva"}</p>
-           <p>({flight?.operatingAirlineCode || "Codigo Aerolinea opeativa"})</p>
-           <p>{flight?.flightNumber || "Flight number" }</p>
-           <p>Condicion que compare codigos de aerolinea</p>
+           <p>{flight?.airlineName}</p>
+           <p>({flight?.airlineCode})</p>
+        </div>
+
+        <div className='flex gap-x-1 w-full text-sm text-black'>
+            <p>{flight?.operatingAirlineName === flight?.airlineName ? null : "Operating Airline:"}</p>
+            <p>{flight?.operatingAirlineName === flight?.airlineName ? null : flight?.operatingAirlineName}</p>
+            <p>{flight?.operatingAirlineCode === flight?.airlineCode ? null : flight?.operatingAirlineCode}</p>
+        </div>
+
+        <div className='flex gap-x-1 w-full text-sm text-black'>
+            <p>{flight?.flightNumber === null ? null : "Flight Number:"}</p>
+            <p>{flight?.flightNumber}</p>
         </div>
        
       </div>
@@ -46,11 +65,12 @@ const FlightDetails: React.FC<Props> = ({flight}) => {
 
         <div className='flex gap-x-1'>
             <p>Duration:</p>
-            <p>{flight?.duration || "Tiempo primer vuelo"}</p>
+            <p>{flight?.duration}</p>
             
         </div>
 
         <div className='flex gap-x-1'>
+            <p>{flight?.aircraftName === null ? null : "Aircraft:"}</p>
             <p>{flight?.aircraftName}</p>
         </div>
 
@@ -59,14 +79,20 @@ const FlightDetails: React.FC<Props> = ({flight}) => {
 
 
         <div className='w-1/4 text-right'>
-        <p>Travelers fare details</p>
-        <p>{flight?.flightPrices?.[0]?.cabinType} remapearlo</p>
-        <p>{flight?.flightPrices?.[0]?.classType} remapearlo</p>
-        <p>remapear cabina y clase que deben guarda la cabina y la clase en su respectivo segmento</p>
-          <p className='font-bold text-lg'>${flight?.flightAmenities?.[0]?.description || "Descripcion amenity"}</p>
-          <p className='text-sm'> isChargeable? </p>
-          <p className='font-bold text-lg'> ${String(flight?.flightAmenities?.[0]?.isChargeable) || "Precio por viajero"}</p>
-          <p className='text-sm'> Price Per Traveler</p>
+            <p className='font-bold'>Travelers fare details</p>
+
+            <div className='flex gap-x-1 text-lg '>
+                <p>Cabin:</p>
+                <p>{flight?.flightPrices?.[0]?.cabinType}</p>
+            </div>
+
+            <div className='flex gap-x-1 text-lg'>
+                <p>Class:</p>
+                <p>{flight?.flightPrices?.[0]?.classType}</p>
+            </div>
+
+            <AmenitiesPopOver flight={flight?.flightAmenities || null} />
+          
         </div>
         
     </div>

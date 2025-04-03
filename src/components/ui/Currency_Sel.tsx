@@ -16,7 +16,7 @@ const Currency_Sel: React.FC = () => {
   return (
   <Space wrap>
     <Select
-      defaultValue="EUR"
+      
       style={{ width: 120 }}
       onChange={handleChange}
       options={[
