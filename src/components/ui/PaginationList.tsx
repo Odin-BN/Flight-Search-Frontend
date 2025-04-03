@@ -28,4 +28,4 @@ const Pagination_List: React.FC = () => {
   return <Pagination defaultCurrent={1} onChange={onChange} total={50} showSizeChanger={false} align={'center'}/> ;
 };
 
-export default Pagination_List;
+export default React.memo(Pagination_List);

@@ -1,6 +1,6 @@
 export interface FlightAmenities{
     description: string;
-    isChargeable: boolean;
+    chargeable: boolean;
 }
 
 export interface FlightPrices{

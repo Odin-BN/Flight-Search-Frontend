@@ -14,7 +14,7 @@ const AmenitiesPopOver: React.FC<Props> = ({flight}) => {
             flight.map((flightAm, index) => (
                 <div key={index}>
                     <p>{flightAm.description}</p>
-                    <p>{flightAm.isChargeable === true ? "Is chargeable" : "Is not chargeable"}</p>
+                    <p>{flightAm?.chargeable ? "Is chargeable" : "Is not chargeable"}</p>
                     <p>-------------------------------------------------</p>
                 </div>
             ))

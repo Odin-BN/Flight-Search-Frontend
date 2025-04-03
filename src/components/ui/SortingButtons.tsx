@@ -41,4 +41,4 @@ const SortingButtons: React.FC = () => {
   );
 };
 
-export default SortingButtons;
+export default React.memo(SortingButtons);
