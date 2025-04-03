@@ -19,7 +19,7 @@ const Search_Button: React.FC = () => {
         console.log("Termino el tiempo antes de solicitar la lista de vuelos encontrados");
         fetchFlights();
       }, 5000);*/
-      fetchFlights();
+    fetchFlights();
     setTimeout(() => {
         //fetchFlights();
         console.log("Termino el tiempo antes de solicitar la lista de vuelos encontrados");
